@@ -1,15 +1,13 @@
 vi-mode
 =======
-This plugin increase `vi-like` zsh functionality.
+This plugin increases `vi-like` zsh functionality.
 
-Use `ESC` or `CTRL-[` to enter `Normal mode`.
+Use `ESC` to enter `Normal mode`.
 
 
 History
 -------
 
-- `ctrl-p` : Previous command in history
-- `ctrl-n` : Next command in history
 - `/`      : Search backward in history
 - `n`      : Repeat the last `/`
 
@@ -24,7 +22,7 @@ wasn't defined by theme.
 Vim edition
 -----------
 
-- `v`   : Edit current command line in Vim
+- `q`   : Edit current command line in Vim
 
 
 Movement
@@ -61,8 +59,6 @@ Insertion
 Delete and Insert
 -----------------
 
-- `ctrl-h`      : While in *Insert mode*: delete character after the cursor
-- `ctrl-w`      : While in *Insert mode*: delete word after the cursor
 - `d{motion}`   : Delete text that {motion} moves over
 - `dd`          : Delete line
 - `D`           : Delete characters under the cursor until the end of the line
