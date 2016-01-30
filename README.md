@@ -1,4 +1,4 @@
-vi-mode
+NIN-VI-MODE
 =======
 
 This plugin increases `vi-like` zsh functionality.Press `ESC` to enter normal mode.
