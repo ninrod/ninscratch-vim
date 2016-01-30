@@ -1,31 +1,27 @@
 vi-mode
 =======
-This plugin increases `vi-like` zsh functionality.
 
-Use `ESC` to enter `Normal mode`.
+This plugin increases `vi-like` zsh functionality.Press `ESC` to enter normal mode.
 
-
-History
+Navigating History
 -------
 
 - `/`      : Search backward in history
 - `n`      : Repeat the last `/`
 
-
 Mode indicators
 ---------------
 
-*Normal mode* is indicated with red `<<<` mark at the right prompt, when it
-wasn't defined by theme.
+Use a theme that defines normal mode indication for `bindkey -v`.
 
 
-Vim edition
+Vim edition: for when things get hairy
 -----------
 
-- `q`   : Edit current command line in Vim
+If things get real complex, you can always edit the current command line in Vim using `K` in normal mode.
 
 
-Movement
+Movements
 --------
 
 - `$`   : To the end of the line
@@ -69,3 +65,8 @@ Delete and Insert
 - `R`           : Enter replace mode: Each character replaces existing one
 - `x`           : Delete [count] characters under and after the cursor
 - `X`           : Delete [count] characters before the cursor
+
+Credits
+-------
+
+Based on the `vi-mode` plugin that comes with [oh-my-zsh][1].
