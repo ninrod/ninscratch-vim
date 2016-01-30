@@ -70,3 +70,6 @@ Credits
 -------
 
 Based on the `vi-mode` plugin that comes with [oh-my-zsh][1].
+
+
+[1]: <https://github.com/robbyrussell/oh-my-zsh>
