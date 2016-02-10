@@ -52,12 +52,16 @@ bindkey "^[[1~" beginning-of-line
 # end key
 bindkey "^[[4~" end-of-line
 
-#delete key
+# delete key
 bindkey "^[[3~" delete-char
 
 # backspace key
 bindkey "^H" backward-delete-char
 bindkey "^?" backward-delete-char
 
-#numeric keypad return (enter)
+# numeric keypad return (enter)
 bindkey "${terminfo[kent]}" accept-line
+
+# pressing <ESC> in normal mode is bogus: you need to press 'i' twice to enter insert mode again.
+# rebinding <ESC> in normal mode to something harmless solves the problem.
+bindkey -M vicmd '\e' what-cursor-position
