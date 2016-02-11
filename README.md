@@ -20,7 +20,7 @@ Mode indicators
 Vim edition: for when things get hairy
 -------------------------------------
 
-* I've bound `K` to fire up `vim` so you can edit your command with full powers.
+* I've bound `gs` to fire up `vim` so you can edit your command with full powers.
 
 
 Movement and insertion
