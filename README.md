@@ -1,75 +1,44 @@
 NIN-VI-MODE
 =======
 
-This plugin increases `vi-like` zsh functionality. Press `ESC` to enter normal mode.
+This plugin increases `vi-like` zsh functionality.
+
+* Press `ESC` to enter `normal` mode.
 
 Navigating History
 -------
 
-- `/`      : Search backward in history
-- `n`      : Repeat the last `/`
+* `/`: Search backward in history
+* `n`: Repeat the last `/`
 
 Mode indicators
 ---------------
 
-Use a theme that defines normal mode indication for `bindkey -v`.
+* Just use a theme that defines normal mode indication for `bindkey -v`. I recommend [powerlevel9k][3].
 
 
 Vim edition: for when things get hairy
------------
+-------------------------------------
 
-If things get real complex, you can always edit the current command line in Vim using `K` in normal mode.
-
-
-Movements
---------
-
-- `$`   : To the end of the line
-- `^`   : To the first non-blank character of the line
-- `0`   : To the first character of the line
-- `w`   : [count] words forward
-- `W`   : [count] WORDS forward
-- `e`   : Forward to the end of word [count] inclusive
-- `E`   : Forward to the end of WORD [count] inclusive
-- `b`   : [count] words backward
-- `B`   : [count] WORDS backward
-- `t{char}`   : Till before [count]'th occurrence of {char} to the right
-- `T{char}`   : Till before [count]'th occurrence of {char} to the left
-- `f{char}`   : To [count]'th occurrence of {char} to the right
-- `F{char}`   : To [count]'th occurrence of {char} to the left
-- `;`   : Repeat latest f, t, F or T [count] times
-- `,`   : Repeat latest f, t, F or T in opposite direction
+* I've bound `K` to fire up `vim` so you can edit your command with full powers.
 
 
-Insertion
----------
+Movement and insertion
+-----------------------
 
-- `i`   : Insert text before the cursor
-- `I`   : Insert text before the first character in the line
-- `a`   : Append text after the cursor
-- `A`   : Append text at the end of the line
-- `o`   : Insert new command line below the current one
-- `O`   : Insert new command line above the current one
+* Just use the normal `vim` binds. `$` goes to the end of the line and so on and so forth.
+* Besides that, use `/` to search backward in history and `n` to repeat the last `/`.
 
+Copy and paste on OSx.
+----------------------
 
-Delete and Insert
------------------
-
-- `d{motion}`   : Delete text that {motion} moves over
-- `dd`          : Delete line
-- `D`           : Delete characters under the cursor until the end of the line
-- `c{motion}`   : Delete {motion} text and start insert
-- `cc`          : Delete line and start insert
-- `C`           : Delete to the end of the line and start insert
-- `r{char}`     : Replace the character under the cursor with {char}
-- `R`           : Enter replace mode: Each character replaces existing one
-- `x`           : Delete [count] characters under and after the cursor
-- `X`           : Delete [count] characters before the cursor
+I've integrated vi-like copy and paste using `pbcopy` and `pbpaste` based on [this][2] tip.
 
 Credits
 -------
 
-Based on the `vi-mode` plugin that comes with [oh-my-zsh][1].
-
+Based on the `vi-mode` plugin that ships with [oh-my-zsh][1].
 
 [1]: <https://github.com/robbyrussell/oh-my-zsh>
+[2]: <http://zshwiki.org/home/zle/vi-mode>
+[3]: <https://github.com/bhilburn/powerlevel9k.git>
