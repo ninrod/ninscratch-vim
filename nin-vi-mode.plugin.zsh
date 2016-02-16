@@ -18,6 +18,7 @@ bindkey -v
 
 # edit line with vim
 autoload -Uz edit-command-line
+zle -N edit-command-line
 bindkey -M vicmd 'gs' edit-command-line
 
 bindkey -M vicmd '?' history-incremental-search-backward
