@@ -1,3 +1,7 @@
+" VIM LICENSE
+" Do ":help uganda"  in Vim to read copying and usage conditions.
+" author: Filipe Silva (ninrod)
+
 if exists('loaded_scratch') || &cp
     finish
 endif
