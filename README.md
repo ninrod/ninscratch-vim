@@ -1,4 +1,4 @@
-# Ninrod's minimal scratch buffer
+# Ninrod's very minimal scratch buffer
 
 * I suggest binding `gs` for NinScratch
 
