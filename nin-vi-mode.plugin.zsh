@@ -69,6 +69,32 @@ bindkey "${terminfo[kent]}" accept-line
 # rebinding <ESC> in normal mode to something harmless solves the problem.
 bindkey -M vicmd '\e' what-cursor-position
 
+vi-lowercase() {
+  local save_cut="$CUTBUFFER" save_cur="$CURSOR"
+  zle .vi-change || return
+  zle .vi-cmd-mode
+  CUTBUFFER="${CUTBUFFER:l}"
+  zle .vi-put-after -n 1
+  CUTBUFFER="$save_cut" CURSOR="$save_cur"
+}
+
+vi-uppercase() {
+  local save_cut="$CUTBUFFER" save_cur="$CURSOR"
+  zle .vi-change || return
+  zle .vi-cmd-mode
+  CUTBUFFER="${CUTBUFFER:u}"
+  zle .vi-put-after -n 1
+  CUTBUFFER="$save_cut" CURSOR="$save_cur"
+}
+
+zle -N vi-lowercase
+zle -N vi-uppercase
+
+bindkey -a 'gU' vi-uppercase
+bindkey -a 'gu' vi-lowercase
+bindkey -M visual 'u' vi-lowercase
+bindkey -M visual 'U' vi-uppercase
+
 ########### vi-like copy and paste on OSx ##########
 if [ `uname` = "Darwin" ] && (($+commands[pbcopy])); then
   function cutbuffer() {
