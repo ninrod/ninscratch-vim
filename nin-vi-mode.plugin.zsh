@@ -1,6 +1,48 @@
 # no delays for mode switching.
 export KEYTIMEOUT=1
 
+# for the iTerm2 terminal
+function zle-keymap-select() {
+  if [[ -n ${TMUX+x} ]]; then
+    if [[ $KEYMAP = vicmd ]]; then
+      # the command mode for vi: block shape
+      echo -ne "\ePtmux;\e\e]1337;CursorShape=0\x7\e\\"
+    else
+      # the insert mode for vi: line shape
+      echo -ne "\ePtmux;\e\e]1337;CursorShape=1\x7\e\\"
+    fi
+  elif [[ $KEYMAP = vicmd ]]; then
+    # the command mode for vi: block shape
+    echo -ne "\e]1337;CursorShape=0\x7"
+  else
+    # the insert mode for vi: line shape
+    echo -ne "\e]1337;CursorShape=1\x7"
+  fi
+  zle reset-prompt
+  zle -R
+}
+
+# for the mintty terminal
+# function zle-keymap-select() {
+#   if [[ -n ${TMUX+x} ]]; then
+#     if [[ $KEYMAP = vicmd ]]; then
+#       # the command mode for vi: block shape
+#       echo -ne "\ePtmux;\e\e[2 q\e\\"
+#     else
+#       # the insert mode for vi: line shape
+#       echo -ne "\ePtmux;\e\e[6 q\e\\"
+#     fi
+#   elif [[ $KEYMAP = vicmd ]]; then
+#     # the command mode for vi: block shape
+#     echo -ne "\e[2 q"
+#   else
+#     # the insert mode for vi: line shape
+#     echo -ne "\e[6 q"
+#   fi
+#   zle reset-prompt
+#   zle -R
+# }
+
 # Updates editor information when the keymap changes.
 function zle-keymap-select() {
   zle reset-prompt
